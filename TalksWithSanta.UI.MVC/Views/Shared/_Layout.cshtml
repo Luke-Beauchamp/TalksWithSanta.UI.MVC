@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!--Google Font- ASAP-->
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet" type="text/css">
+    <!--Bundles-->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WE02XNKY79"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WE02XNKY79');
+    </script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+            <img src="~/Content/Images/santatalkslogo-02.png" class="my-logo" alt="Talks With Santa Home" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav my-links">
+                <a class="nav-item nav-link" href="@Url.Action("Index","Home")">HOME</a>
+                <a class="nav-item nav-link" href="@Url.Action("About","Home")">ABOUT</a>
+                <a href="https://www.picktime.com/95c3cbf0-505e-473e-9955-0b6e40ee5451" target="_blank" class="nav-item nav-link my-book-now">BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    @RenderBody()
+    <div class="container my-index-content-three">
+        <div class="row text-center">
+            <div class="col-4 offset-4">
+                <a href="https://facebook.com/talkswithsanta" target="_blank">
+                    <img src="~/Content/Images/facebook-logo.png" class="my-logo-1" alt="facebook link" />
+                </a>
+                <a href="https://instagram.com/talkswithsanta" target="_blank">
+                    <img src="~/Content/Images/insta-logo.png" class="my-logo-2" alt="instagram link" />
+                </a>
+            </div>
+            <div class="col-10 offset-1">
+                <hr />
+                <footer class="text-center">
+                    <p>&copy; @DateTime.Now.Year - Designed by Brooke Beauchamp &amp; Luke Beauchamp</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    </div>
+
+    <!--Bundles-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        //highlight selected navigation
+        //***You SHOULD comment out ALL console.log() information BEFORE deployment***
+        //Added a class (because one did not exist) to the li in the .nav and here is the logic to apply the css based
+        //on where the user is in the navigation
+        $('div.my-links a').each(function () {
+            //if the href of the anchor tag (being looped thru) matches the url bar in the browser - apply the selected class to the li
+            //This logic works if you do not have multiple actions tied to the same controller for Data Access this will work
+            //(something like your personal website where all the links are strictly defined: Action/Controller)
+            //if ($(this).find('a').attr('href') == window.location.pathname) {
+            //    $(this).addClass('selected');
+            //}
+
+            //for data driven apps where you have multiple actions associated to the controller, you want to see the
+            //generic link at the top highlighted no matter which view is presented in the browser. Home and Account controller
+            //if selected generically will highlight ALL actions/views associated to it.
+
+            //get the full anchor tag and output the tag to the console (in the inspector)
+            var fullAnchor = $(this).attr('href');
+            console.log(fullAnchor);
+
+            //split() the values by the '/' (gives us a collection) of the controller name(s)
+            var aController = fullAnchor.split('/');
+            console.log('aController[1]: ' + aController[1]);
+
+            //get the full context of the URL (including any QueryString Values)
+            //substring to remove everything before the path
+            //(mysite.com/home/index - home/index)
+            var fullPath = (window.location.pathname + location.search).substr(1);
+
+            //break the URL string by the '/'
+            var pController = fullPath.split('/');
+            //check all values in the console
+            console.log('pController[0]: ' + pController[0]);
+            console.log('--------------------------------');
+            console.log(window.location.pathname);
+            console.log(fullPath);
+
+            //if the anchor tag controller matches the URL controller - add our class
+            if (aController[1] == pController[0]) {
+                $(this).addClass('active');
+            }
+
+            //Additional logic for the Home Controller
+            //if the controller is Home, but the path does NOT match the ENTIRE anchor - remove the class
+            //which prevents 2 nav elements from showing selected at the same time.
+            //This is also logic that could be added for the Register and login links from the Account Controller
+            if (aController[1] == "Home" && window.location.pathname != fullAnchor) {
+                $(this).removeClass('active');
+            }
+            //prevent login and register from being highlighted at the same time.
+            if (aController[1] == "Account" && window.location.pathname != fullAnchor) {
+                $(this).removeClass();
+            }
+        });
+    </script>
+
+</body>
+</html>

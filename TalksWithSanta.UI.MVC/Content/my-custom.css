@@ -1,0 +1,273 @@
+﻿/*
+    font-family: 'Asap', sans-serif;
+
+*/
+body {
+    font-family: 'Asap', sans-serif !important;
+    background-color: #EE4036;
+    max-width: 1680px;
+    margin: auto;
+}
+
+/*#region NavBar */
+.my-logo {
+    height: 3rem;
+    margin-left: 2rem;
+}
+
+.my-links > a {
+    margin-right: 2rem;
+    font-weight: 600;
+}
+
+.my-book-now {
+    width: 45%;
+    color: #fff !important;
+    background: #EE4036;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    font-weight: initial !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+/*#endregion */
+
+/*#region Index-Banner */
+.my-index-banner {
+    background: url('Images/webelementsmaster-06.png');
+    max-width: inherit !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 46.73%
+}
+
+.my-about-banner {
+    background: url('Images/aboutweb-07.png');
+    max-width: inherit !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 46.73%
+}
+
+    .my-index-banner > div, .my-about-banner > div {
+        margin-top: -34%;
+        padding-left: 14%;
+    }
+
+.my-index-banner h1 {
+    color: #fff;
+    text-align: center;
+    font-size: .9rem;
+    padding-bottom: 1%;
+}
+
+.my-about-banner h1 {
+    color: #000;
+    text-align: center;
+    font-size: .9rem;
+    padding-bottom: 1%;
+}
+
+.my-index-banner > div > div, .my-about-banner > div > div {
+    margin-left: 2%;
+    font-size: .5rem !important;
+}
+
+.my-padding-top-bottom {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+
+.my-left-image {
+    width: 70%;
+    margin: auto;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .my-index-banner h1, .my-about-banner h1 {
+        font-size: 1.2rem !important;
+    }
+
+    .my-index-banner > div > div, .my-about-banner > div > div {
+        font-size: .7rem !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+    .my-index-banner h1, .my-about-banner h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .my-index-banner > div > div, .my-about-banner > div > div {
+        font-size: .9rem !important;
+        margin-left: 4% !important;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .my-index-banner h1, .my-about-banner h1 {
+        font-size: 2rem !important;
+    }
+
+    .my-index-banner > div > div, .my-about-banner > div > div {
+        font-size: 1.1rem !important;
+        margin-left: 6% !important;
+    }
+
+    .container {
+        padding-right: 45px;
+        padding-left: 45px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .my-index-banner h1, .my-about-banner h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .my-index-banner > div > div, .my-about-banner > div > div {
+        font-size: 1.3rem !important;
+        margin-left: 7% !important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .my-index-banner h1, .my-about-banner h1 {
+        font-size: 3rem !important;
+    }
+
+    .my-index-banner > div > div, .my-about-banner > div > div {
+        font-size: 1.5rem !important;
+        margin-left: 7% !important;
+    }
+}
+
+/*#endregion */
+
+/*#region My Index Content*/
+.my-index-content-one {
+    max-width: inherit !important;
+    background-color: #fff;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.my-index-content-two {
+    max-width: inherit !important;
+    background: url('Images/santatalksassets-14.png');
+    background-size: contain;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.my-index-content-three {
+    max-width: inherit !important;
+    background-color: #35522D;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.my-plr {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.mico-h3 {
+    color: #35522D;
+    font-weight: 800;
+    font-size: xx-large;
+}
+
+.mict-h3 {
+    color: #fff;
+    font-weight: 800;
+    font-size: xx-large;
+}
+
+.mict-p {
+    color: #fff;
+}
+
+.my-em {
+    color: #EE4036;
+    font-style: italic;
+}
+
+.my-logo-1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-width: 32px;
+    height: auto;
+    margin-right: .5rem;
+}
+
+.my-logo-2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-width: 32px;
+    height: auto;
+}
+/*#endregion */
+
+
+/*#region FAQ*/
+.my-accordian {
+    width: 75%;
+}
+
+.my-accordian > div.card {
+    border: none;
+    border-radius: 0;
+}
+
+.my-accordian > div > div.card-header {
+    background: none;
+    border-bottom: none;
+}
+
+.my-faq-hr {
+    border-top: 3px dashed #EE4036;
+}
+
+.my-faq-button {
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
+
+    .my-faq-button:hover {
+        color: #35522D;
+        text-decoration: underline;
+    }
+
+    .my-faq-button:focus {
+        text-decoration: underline;
+        box-shadow: none;
+    }
+
+.my-faq-p {
+    font-size: 1.8em;
+    color: #fff;
+}
+/*#endregion*/
+
+.my-payment-header {
+    margin-top: .75rem;
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+}
